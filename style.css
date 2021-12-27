@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* ! variables */
+:root {
+  /* ? Colors */
+
+  /* Primary Colors */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* Neutral */
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line-clr: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+
+  --border-radius: 10px;
+}
+
+/* ! utils */
+
+.hover:hover {
+  color: var(--cyan);
+  cursor: pointer;
+  transition: color 100ms ease-in;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2em 0;
+  display: grid;
+  place-content: center;
+  background-color: var(--main-bg);
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+}
+
+.card-container {
+  max-width: 400px;
+  padding: 1.5em;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: -4px 4px 10px 10px hsl(216deg 54% 11% / 39%);
+}
+
+.card-img {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  background-image: url('./images/image-equilibrium.jpg');
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--border-radius);
+  overflow-x: hidden;
+}
+
+.card-img::before {
+  content: url('./images/icon-view.svg');
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: none;
+  place-content: center;
+  background-color: hsla(178, 100%, 50%, 0.522);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: display 250ms ease-in;
+}
+
+.card-img:hover::before {
+  display: grid;
+}
+
+.card-text {
+  margin: 1em 0;
+}
+
+.card-heading {
+  color: var(--white);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.card-desc {
+  margin: 0.5em 0;
+  font-size: 1.1rem;
+  color: var(--soft-blue);
+  font-weight: 300;
+  line-height: 1.7em;
+}
+
+.card-stats {
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-stats h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.card-stats img {
+  margin-right: 0.2em;
+}
+
+.eth {
+  color: var(--cyan);
+}
+
+.left-days {
+  color: var(--soft-blue);
+}
+
+.card-footer {
+  margin: 1.5em 0 0;
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: 2px solid var(--line-clr);
+}
+
+.avatar {
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  border: 2px solid var(--white);
+}
+
+.footer-text {
+  margin-left: 1em;
+  font-size: 1.1rem;
+  color: var(--soft-blue);
+  font-weight: 300;
+}
+
+.footer-text a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* ! Media Queries */
+
+@media (max-width: 768px) {
+  .card-container {
+    width: 375px;
+  }
+  .card-heading {
+    font-size: 1.4rem;
+  }
+}
+
+/* styles for attribution */
+.attribution {
+  margin: 3em 0 0;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--white);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
